@@ -33,4 +33,8 @@ public class Pilot {
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
     }
+
+    public String message(){
+        return "I am " + this.getRank() + " " + this.getName() + " your captain today.";
+    }
 }

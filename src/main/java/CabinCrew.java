@@ -23,4 +23,8 @@ public class CabinCrew {
     public void setCabinCrewType(CabinCrewType cabinCrewType) {
         this.cabinCrewType = cabinCrewType;
     }
+
+    public String message(){
+        return "This is " + this.getName() + " we're about to hit the North Tower.";
+    }
 }

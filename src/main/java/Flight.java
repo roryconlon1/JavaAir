@@ -38,12 +38,8 @@ public class Flight {
         return this.planeType.getCapacity() - passengerCount();
     }
 
-    public String pilotName(){
-        return this.pilot.getName();
-    }
-
-    public String pilotFly(){
-        return "I am " + pilotName() + " your captain today";
+    public String pilotMessage(){
+        return pilot.message();
     }
 
     public CabinCrew findCabinCrew(String name){
@@ -56,7 +52,11 @@ public class Flight {
     }
 
     public String relayMessage(CabinCrew cabinCrew){
-        return "This is " + cabinCrew.getName() + " we're about to hit the North Tower.";
+//        return cabinCrew.message();
+        if(cabinCrew != null){
+            return cabinCrew.message();
+        }
+        return "Take care of yourself";
     }
 
 
