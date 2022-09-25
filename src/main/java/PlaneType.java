@@ -1,9 +1,9 @@
 public enum PlaneType {
-    BOEING747(3, 5000),
-    AIRBUSA380(4, 6000),
-    BOEING737(2, 7000),
-    BOEING787(5, 8000),
-    AIRBUSA320(1, 9000);
+    BOEING747(3, 100),
+    AIRBUSA380(4, 110),
+    BOEING737(2, 120),
+    BOEING787(5, 130),
+    AIRBUSA320(1, 140);
 
     private Integer capacity;
     private Integer totalWeight;
@@ -28,4 +28,10 @@ public enum PlaneType {
     public void setTotalWeight(Integer totalWeight) {
         this.totalWeight = totalWeight;
     }
+
+    public int bagWeight(){
+        return (this.totalWeight/2)/this.getCapacity();
+    }
+
+
 }
