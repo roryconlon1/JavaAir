@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class FlightTest {
     Flight flight;
@@ -66,14 +67,20 @@ public class FlightTest {
     }
 
     @Test
-    public void canUpdatePassengerFlightDest(){
+    public void canUpdatePassengerFlightDestWhenBooked(){
         flight.addPassengers(passenger1);
-        assertEquals("MAN", flight.passengerLocation(passenger1));
+        assertEquals("MAN", flight.getLocation(passenger1));
     }
 
     @Test
     public void cannotUpdatePassengerNotOnFlight(){
         flight.addPassengers(passenger1);
-        assertEquals(null, flight.passengerLocation(passenger2));
+        assertNull(null, flight.updatePassengerLocation(passenger2));
+    }
+
+    @Test
+    public void canAddSeatNumber(){
+        flight.addPassengers(passenger1);
+        assertEquals(1, flight.getSeatNumber(passenger1));
     }
 }

@@ -26,8 +26,11 @@ public class Passenger {
         return seatNumber;
     }
 
-    public void setSeatNumber(Integer seatNumber) {
+
+
+    public int setSeatNumber(Integer seatNumber) {
         this.seatNumber = seatNumber;
+        return 0;
     }
 
     public String getName() {

@@ -3,6 +3,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Flight {
     private Pilot pilot;
@@ -33,10 +34,29 @@ public class Flight {
         this.cabinCrews.add(cabinCrew);
     }
 
+//    public void addPassengers(Passenger passenger){
+//        if(this.planeType.getCapacity() > passengers.size()){
+//        this.passengers.add(passenger);}
+//        if (this.planeType.getCapacity() > passengers.size()){
+//            this.updatePassengerLocation(passenger);
+//        }
+//        if (this.planeType.getCapacity() > passengers.size()){
+//            this.updateSeatNumber(passenger);
+//        }
+//    }
+
     public void addPassengers(Passenger passenger){
         if(this.planeType.getCapacity() > passengers.size()){
-        this.passengers.add(passenger);}
+            this.passengers.add(passenger);}
+        if (this.planeType.getCapacity() > passengers.size()){
+            this.updatePassengerLocation(passenger);
+        }
+        if (this.planeType.getCapacity() > passengers.size()){
+            this.updateSeatNumber(passenger);
+        }
     }
+
+
 
     public int passengerCount(){
         return this.passengers.size();
@@ -67,10 +87,25 @@ public class Flight {
         return "Take care of yourself";
     }
 
-    public String passengerLocation(Passenger passenger){
+    public String updatePassengerLocation(Passenger passenger){
         if(passengers.contains(passenger)){
         return passenger.setFlightBooking(this.destinationAirport);}
         return null;
+    }
+
+    public String getLocation(Passenger passenger){
+        return passenger.getFlightBooking();
+    }
+
+    public int getSeatNumber(Passenger passenger){
+        if(passengers.contains(passenger)){
+            return passenger.getSeatNumber();
+        }
+        return 0;
+    }
+
+    public void updateSeatNumber(Passenger passenger){
+        passenger.setSeatNumber(this.passengerCount());
     }
 
 
