@@ -67,6 +67,12 @@ public class Flight {
         return "Take care of yourself";
     }
 
+    public String passengerLocation(Passenger passenger){
+        if(passengers.contains(passenger)){
+        return passenger.setFlightBooking(this.destinationAirport);}
+        return null;
+    }
+
 
 
 

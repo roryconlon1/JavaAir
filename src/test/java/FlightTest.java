@@ -64,4 +64,16 @@ public class FlightTest {
     public void cabinCrewMessage(){
         assertEquals("This is Paul we're about to hit the North Tower.", flight.relayMessage(cabinCrew2));
     }
+
+    @Test
+    public void canUpdatePassengerFlightDest(){
+        flight.addPassengers(passenger1);
+        assertEquals("MAN", flight.passengerLocation(passenger1));
+    }
+
+    @Test
+    public void cannotUpdatePassengerNotOnFlight(){
+        flight.addPassengers(passenger1);
+        assertEquals(null, flight.passengerLocation(passenger2));
+    }
 }
