@@ -1,4 +1,8 @@
+import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Flight {
     private Pilot pilot;
@@ -8,9 +12,9 @@ public class Flight {
     private String flightNumber;
     private String departureAirport;
     private String destinationAirport;
-    private String departureTime;
+    private LocalTime departureTime;
 
-    public Flight(Pilot pilot, PlaneType planeType, String flightNumber, String departureAirport, String destinationAirport, String departureTime) {
+    public Flight(Pilot pilot, PlaneType planeType, String flightNumber, String departureAirport, String destinationAirport, LocalTime departureTime) {
         this.pilot = pilot;
         this.cabinCrews = new ArrayList<CabinCrew>();
         this.passengers = new ArrayList<Passenger>();
@@ -19,6 +23,10 @@ public class Flight {
         this.departureAirport = departureAirport;
         this.destinationAirport = destinationAirport;
         this.departureTime = departureTime;
+    }
+
+    public LocalTime getDepartureTime() {
+        return departureTime;
     }
 
     public void addCabinCrew(CabinCrew cabinCrew){

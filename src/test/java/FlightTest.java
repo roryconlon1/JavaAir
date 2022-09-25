@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -18,7 +19,7 @@ public class FlightTest {
 
     @Before
     public void before(){
-        flight = new Flight(new Pilot("John", "Chief Officer", "BL420"), PlaneType.BOEING737, "BA157", "GLA", "MAN", "2030");
+        flight = new Flight(new Pilot("John", "Chief Officer", "BL420"), PlaneType.BOEING737, "BA157", "GLA", "MAN", LocalTime.parse("16:00") );
         cabinCrew1 = new CabinCrew("Jane", CabinCrewType.PURSER);
         cabinCrew2 = new CabinCrew("Paul", CabinCrewType.FLIGHT_ATTENDANT);
         cabinCrew3 = new CabinCrew("Alan", CabinCrewType.FIRST_OFFICER);
@@ -36,6 +37,11 @@ public class FlightTest {
         flight.addPassengers(passenger1);
         flight.addPassengers(passenger3);
         assertEquals(2, flight.passengerCount());
+    }
+
+    @Test
+    public void canGetTOTime(){
+        assertEquals(LocalTime.parse("16:00"), flight.getDepartureTime());
     }
 
     @Test
