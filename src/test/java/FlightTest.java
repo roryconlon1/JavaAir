@@ -76,7 +76,7 @@ public class FlightTest {
     @Test
     public void cannotUpdatePassengerNotOnFlight(){
         flight.addPassengers(passenger1);
-        assertNull(null, flight.updatePassengerLocation(passenger2));
+        assertNull(flight.updatePassengerLocation(passenger2));
     }
 
     @Test
