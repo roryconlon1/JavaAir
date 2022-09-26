@@ -81,6 +81,8 @@ public class FlightTest {
     @Test
     public void canAddSeatNumber(){
         flight.addPassengers(passenger1);
+        flight.addPassengers(passenger2);
         assertEquals(1, flight.getSeatNumber(passenger1));
+        assertEquals(2, flight.getSeatNumber(passenger2));
     }
 }

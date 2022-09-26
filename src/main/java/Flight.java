@@ -48,13 +48,24 @@ public class Flight {
     public void addPassengers(Passenger passenger){
         if(this.planeType.getCapacity() > passengers.size()){
             this.passengers.add(passenger);}
-        if (this.planeType.getCapacity() > passengers.size()){
+        if (passenger != null){
             this.updatePassengerLocation(passenger);
         }
-        if (this.planeType.getCapacity() > passengers.size()){
+        if (passenger != null){
             this.updateSeatNumber(passenger);
         }
     }
+
+//    public void addPassengers(Passenger passenger){
+//        if(this.planeType.getCapacity() > passengers.size()){
+//            this.passengers.add(passenger);}
+//        if (this.planeType.getCapacity() > passengers.size()){
+//            this.findPassenger(passenger.getName()).setFlightBooking(this.destinationAirport);
+//        }
+//        if (this.planeType.getCapacity() > passengers.size()){
+//            this.findPassenger(passenger.getName()).setSeatNumber(this.passengerCount());
+//        }
+//    }
 
 
 
@@ -77,6 +88,15 @@ public class Flight {
                 findMember = cabinCrew;}
             }
         return findMember;
+    }
+
+    public Passenger findPassenger(String name){
+        Passenger findPassenger = null;
+        for(Passenger passenger : this.passengers){
+            if (passenger.getName() == name){
+                findPassenger = passenger;}
+            }
+        return findPassenger;
     }
 
     public String relayMessage(CabinCrew cabinCrew){
