@@ -8,8 +8,8 @@ public class Passenger {
     public Passenger(String name, Integer numberOfBags) {
         this.name = name;
         this.numberOfBags = numberOfBags;
-        this.seatNumber = seatNumber;
-        this.flightBooking = flightBooking;
+        this.seatNumber = 0;
+        this.flightBooking = "";
 
     }
 
