@@ -45,6 +45,11 @@ public class Flight {
 //        }
 //    }
 
+
+    public String getFlightNumber(Passenger passenger) {
+        return flightNumber;
+    }
+
     public void addPassengers(Passenger passenger){
         if(this.planeType.getCapacity() > passengers.size()){
             this.passengers.add(passenger);}
@@ -109,11 +114,11 @@ public class Flight {
 
     public String updatePassengerLocation(Passenger passenger){
         if(passengers.contains(passenger)){
-        return passenger.setFlightBooking(this.destinationAirport);}
+        return passenger.setFlightBooking(this.flightNumber);}
         return null;
     }
 
-    public String getLocation(Passenger passenger){
+    public String getFlightForPassenger(Passenger passenger){
         return passenger.getFlightBooking();
     }
 

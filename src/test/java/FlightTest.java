@@ -67,9 +67,11 @@ public class FlightTest {
     }
 
     @Test
-    public void canUpdatePassengerFlightDestWhenBooked(){
+    public void canUpdateFlightForPassenger(){
         flight.addPassengers(passenger1);
-        assertEquals("MAN", flight.getLocation(passenger1));
+        flight.addPassengers(passenger2);
+        assertEquals("BA157", flight.getFlightForPassenger(passenger1));
+        assertEquals("BA157", flight.getFlightForPassenger(passenger2));
     }
 
     @Test
