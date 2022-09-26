@@ -2,7 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -86,5 +85,12 @@ public class FlightTest {
         flight.addPassengers(passenger2);
         assertEquals(1, flight.getSeatNumber(passenger1));
         assertEquals(2, flight.getSeatNumber(passenger2));
+    }
+
+    @Test
+    public void cantAddSeatNumberIfDoesNotExist(){
+        flight.addPassengers(passenger1);
+        assertEquals(1, flight.getSeatNumber(passenger1));
+        assertEquals(0, flight.getSeatNumber(passenger2));
     }
 }

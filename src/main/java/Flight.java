@@ -1,9 +1,5 @@
-import java.sql.Time;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Flight {
     private Pilot pilot;
@@ -34,22 +30,6 @@ public class Flight {
         this.cabinCrews.add(cabinCrew);
     }
 
-//    public void addPassengers(Passenger passenger){
-//        if(this.planeType.getCapacity() > passengers.size()){
-//        this.passengers.add(passenger);}
-//        if (this.planeType.getCapacity() > passengers.size()){
-//            this.updatePassengerLocation(passenger);
-//        }
-//        if (this.planeType.getCapacity() > passengers.size()){
-//            this.updateSeatNumber(passenger);
-//        }
-//    }
-
-
-    public String getFlightNumber(Passenger passenger) {
-        return flightNumber;
-    }
-
     public void addPassengers(Passenger passenger){
         if(this.planeType.getCapacity() > passengers.size()){
             this.passengers.add(passenger);}
@@ -60,19 +40,6 @@ public class Flight {
             this.updateSeatNumber(passenger);
         }
     }
-
-//    public void addPassengers(Passenger passenger){
-//        if(this.planeType.getCapacity() > passengers.size()){
-//            this.passengers.add(passenger);}
-//        if (this.planeType.getCapacity() > passengers.size()){
-//            this.findPassenger(passenger.getName()).setFlightBooking(this.destinationAirport);
-//        }
-//        if (this.planeType.getCapacity() > passengers.size()){
-//            this.findPassenger(passenger.getName()).setSeatNumber(this.passengerCount());
-//        }
-//    }
-
-
 
     public int passengerCount(){
         return this.passengers.size();
@@ -95,17 +62,16 @@ public class Flight {
         return findMember;
     }
 
-    public Passenger findPassenger(String name){
-        Passenger findPassenger = null;
-        for(Passenger passenger : this.passengers){
-            if (passenger.getName() == name){
-                findPassenger = passenger;}
-            }
-        return findPassenger;
-    }
+//    public Passenger findPassenger(String name){
+//        Passenger findPassenger = null;
+//        for(Passenger passenger : this.passengers){
+//            if (passenger.getName() == name){
+//                findPassenger = passenger;}
+//            }
+//        return findPassenger;
+//    }
 
     public String relayMessage(CabinCrew cabinCrew){
-//        return cabinCrew.message();
         if(cabinCrew != null){
             return cabinCrew.message();
         }
@@ -132,10 +98,5 @@ public class Flight {
     public void updateSeatNumber(Passenger passenger){
         passenger.setSeatNumber(this.passengerCount());
     }
-
-
-
-
-
 
 }

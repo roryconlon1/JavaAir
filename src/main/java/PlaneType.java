@@ -17,17 +17,11 @@ public enum PlaneType {
         return capacity;
     }
 
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
-    }
 
     public Integer getTotalWeight() {
         return totalWeight;
     }
 
-    public void setTotalWeight(Integer totalWeight) {
-        this.totalWeight = totalWeight;
-    }
 
     public int bagWeight(){
         return (this.totalWeight/2)/this.getCapacity();

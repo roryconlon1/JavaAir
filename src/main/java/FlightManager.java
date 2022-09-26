@@ -21,10 +21,6 @@ public class FlightManager {
         return passengers;
     }
 
-    public void setPassengers(ArrayList<Passenger> passengers) {
-        this.passengers = passengers;
-    }
-
     public int weightOfBags(){
         return plane.bagWeight();
     }
